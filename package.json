@@ -1,0 +1,19 @@
+{
+  "name": "hso-tech-test",
+  "version": "1.0.0",
+  "description": "Automated tests for the saucedemo.com website using Cypress",
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,json=true",
+    "test:report": "npm run test && npx mochawesome-merge cypress/reports/*.json > merged-report.json && npx mochawesome-report-generator merged-report.json"
+  },
+  "devDependencies": {
+    "cypress": "^12.17.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
